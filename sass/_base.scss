@@ -1,0 +1,136 @@
+:root {
+    --color-background1: #fff; 
+    --color-text1: #4F200D; 
+    --color-text2: #454545; 
+    --span-background: #F7C04A;
+    --button-background: #FF1E1E; 
+    --button-hover: #E0144C;
+    --price-background: #E21818;   
+    --color-dot1: #bbb;
+    --color-dot2: #FFD93D; 
+    --color-border:#E8E8E8; 
+    --light-white: #D1D1D1;
+    --color-black: #111;
+
+    --color-linear: linear-gradient(rgba(250, 176, 39, 0.9), rgba(250, 176, 39, 0.9)); 
+    --color-boxshadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@mixin text-position {
+    position: absolute;
+    top: 3rem;
+    left: 2rem;
+    color: var(--color-background1);
+}
+
+@mixin img-width {
+    width: 100%;
+    display: block;
+    border-radius: 0.5rem; 
+    @include responsive-mobile {
+        border-radius: 0;
+    }
+}
+
+@mixin img-div-width {
+    height: auto;
+    position: relative;
+    width: 62rem;
+    @include responsive-laptop {
+        width: 52rem;
+    }
+    @include responsive-tablet {
+        width: 43rem;
+    }
+    @include responsive-mobile {
+        width: 100%;
+    }
+}
+ 
+@mixin set-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@mixin span-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@mixin button-common {
+    background-color: var(--button-background);
+    color: var(--color-background1);
+    cursor: pointer;
+    border: none;
+    transition: 0.6s all;
+    &:hover {
+        background-color: var(--button-hover);
+    }
+}
+
+@mixin footer-span {
+    font-family: 'Suwannaphum', serif;
+    font-weight: 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 68.5%;          // 1rem = 10px , 10px / 16px = 62.5%
+}
+
+body {
+    background-color: var(--color-background1);
+    color: var(--color-text1);
+    font-family: 'Suwannaphum', serif;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh; 
+}
+
+p, h1, h2, h3, h4, a, span {
+    font-family: 'Suwannaphum', serif;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 8rem;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 900; 
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+// =================== MEDIA QUERIES (LAPTOPS) =================== // 
+@mixin responsive-laptop {
+    @media(max-width: 1300px) { @content }; 
+}
+
+// =================== MEDIA QUERIES (TABLETS) =================== // 
+@mixin responsive-tablet {
+    @media(max-width: 1024px) { @content }; 
+}
+
+// =================== MEDIA QUERIES (MOBILES) =================== // 
+@mixin responsive-mobile {
+    @media(max-width: 600px) { @content }; 
+}

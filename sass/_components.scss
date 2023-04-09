@@ -1,0 +1,742 @@
+// Navigation //////////////////////////////////////////
+.menu {
+    display: flex; 
+    justify-content: space-between;
+    position: relative;
+
+    &__logo {
+        margin-top: 4rem;
+        margin-left: 4.5rem;
+        cursor: pointer;
+        @include responsive-mobile { 
+            height: 6rem;
+            position: absolute; 
+            left: 4.5rem;
+            top: -6.4rem;
+        }
+
+        i {
+            font-size: 5rem;
+            @include responsive-mobile {
+                width: 20rem;
+            } 
+            a {
+                text-decoration: none; 
+                font-size: 2.8rem; 
+                color: var(--color-text1); 
+                margin-left: 2rem;
+                position: absolute;
+                bottom: 3.5rem;
+                @include responsive-tablet {
+                    font-size: 2.2rem;
+                    bottom: 4.2rem;
+                }
+                @include responsive-mobile {
+                    font-size: 1.6rem;
+                    bottom: 0.3rem;
+                    margin-left: 1rem;
+                }
+            }
+            @include responsive-tablet {
+                font-size: 4.2rem;
+            }
+            @include responsive-mobile {
+                font-size: 3rem;
+                top: 5rem;
+                position: absolute;
+            }
+        }
+    }
+
+    &__navigation {
+        @include responsive-mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        i {
+            font-size: 2.5rem;
+            margin-left: 23rem;
+            margin-top: 4rem;
+            @include responsive-mobile {
+                font-size: 1.8rem;
+                margin-top: 8rem;
+                margin-left: 0;
+            }
+            span {
+                font-size: 1.5rem;
+                font-weight: 700; 
+                margin-left: 1rem;
+                position: relative;
+                bottom: 0.4rem;
+                @include responsive-mobile {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        ul {
+            display: flex; 
+            margin-top: 2rem;
+            @include responsive-mobile {
+               margin-left: 3rem;
+            }
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none; 
+                    font-size: 2rem; 
+                    color: var(--color-text1); 
+                    font-weight: 700; 
+                    margin-right: 4.5rem;
+                    transition: 0.8s all;
+                    &:hover {
+                        color: var(--button-background);
+                    }
+                    @include responsive-mobile {
+                        font-size: 1.3rem;
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.menu-content {
+    position: relative;
+    .text-content {
+        width: 40%;
+        margin-top: 6rem;
+        margin-left: 4.5rem;
+        @include responsive-tablet {
+            width: 60%;
+        }
+        @include responsive-mobile {
+            width: 100%;
+            margin-top: 3rem;
+            margin-left: 2.8rem;
+        }
+        p {
+            border: 2px dashed var(--color-text1); 
+            font-size: 1.5rem; 
+            font-weight: 400; 
+            padding: 0.5rem 1rem; 
+            width: 80%; 
+            @include responsive-laptop {
+                width: 96%;
+            }
+            @include responsive-tablet {
+                width: 81%;
+            }
+            @include responsive-mobile {
+                width: 85%;
+                font-size: 1rem;
+            }
+        }
+
+        h1 {
+         margin-top: -1rem; 
+         @include responsive-mobile {
+            font-size: 6rem; 
+         }
+        }
+
+        span {
+            @include footer-span; 
+            font-size: 4.5rem; 
+            position: relative;
+            bottom: 3rem; 
+            @include responsive-mobile {
+                font-size: 3.5rem;
+            }
+        }
+    }
+
+    .image-content {
+        img {
+            position: absolute; 
+        }
+        .img-fries {
+            width: 26rem; 
+            top: 0; 
+            right: 36rem; 
+            @include responsive-tablet {
+                right: 20rem;
+            }
+            @include responsive-mobile {
+                width: 14rem;
+                top: 17rem;
+                right: 16rem; 
+            }
+        }
+        .img-coke {
+            width: 14rem; 
+            top: 0; 
+            right: 18rem;
+            @include responsive-laptop {
+                right: 13rem;
+            }
+            @include responsive-tablet {
+                right: 6rem;
+            }
+            @include responsive-mobile {
+                width: 8rem;
+                top: 15rem;
+            }
+        }
+        .img-middle {
+            width: 24rem; 
+            top: 5rem; 
+            right: 25rem;
+            @include responsive-laptop {
+                right: 21rem;
+            }
+            @include responsive-tablet {
+                right: 14rem;
+            }
+            @include responsive-mobile {
+                width: 12rem;
+                top: 20rem;
+                right: 10rem;
+            }
+        }
+
+        .shadow1::before {
+            content: ''; 
+            position: absolute;
+            bottom: -5.8rem;
+            right: 13%;
+            width: 8%;
+            height: 8px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50%;
+            z-index: 9;
+            filter: blur(6px);
+            @include responsive-tablet {
+                right: 10%;
+            }
+            @include responsive-mobile {
+                bottom: -85%;
+                right: 21%;
+            }
+        }
+
+        .shadow2::before {
+            content: ''; 
+            position: absolute;
+            bottom: -7.5rem;
+            right: 21%;
+            width: 12%;
+            height: 8px;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50%;
+            z-index: 9;
+            filter: blur(7px);
+            @include responsive-mobile {
+                bottom: -96%;
+                right: 36%;
+            }
+        }
+    }
+
+    .price-content {
+        position: absolute; 
+        right: 32%;
+        top: 17rem;
+        background-color: var(--price-background); 
+        border-radius: 50%;
+        padding: 1rem; 
+        @include responsive-mobile {
+            top: 25rem;
+            right: 50%;
+        }
+        .price {
+            color: var(--color-background1); 
+            border: 2px dashed var(--color-background1); 
+            border-radius: 50%;
+            padding: 0 2rem; 
+            text-align: center;
+            @include responsive-mobile {
+                padding: 0 1rem;
+            }
+            .price1 {
+                font-size: 5rem; 
+                font-weight: 700; 
+                position: relative;
+                top: 1rem;
+                @include responsive-mobile {
+                    font-size: 3rem;
+                }
+            }
+            .price2 {
+                font-size: 2.5rem; 
+                font-weight: 700; 
+                position: relative;
+                top: 1rem;
+                @include responsive-mobile {
+                    font-size: 2rem;
+                }
+            }
+            .price3 {
+                font-size: 2.5rem; 
+                font-weight: 700; 
+                position: relative;
+                bottom: 1rem; 
+                @include responsive-mobile {
+                    font-size: 2rem; 
+                    bottom: 0.5rem; 
+                }
+            }
+        }
+    }
+}
+
+// Try It Today ///////////////////////////////////////
+.try1 {
+    @include img-div-width; 
+
+    .title {
+        @include text-position; 
+    }
+
+    &__img {
+        @include img-width; 
+    }
+}
+
+.try2 {
+    display: grid; 
+    grid-template-rows: repeat(2, 1fr); 
+    grid-row-gap: 3rem;
+    @include responsive-tablet {
+        grid-row-gap: 1rem; 
+    }
+    @include responsive-mobile {
+        grid-row-gap: 0; 
+    }
+
+    .fun {
+        @include img-div-width; 
+    }
+
+    .fresh {
+        @include img-div-width; 
+    }
+
+    .title {
+        @include text-position; 
+        .title__heading {
+            line-height: 1.4; 
+        }
+    }
+
+    &__img {
+        @include img-width; 
+        height: 19rem;
+        @include responsive-laptop {
+            height: 16rem; 
+        }
+        @include responsive-tablet {
+            height: 13.5rem; 
+        }
+        @include responsive-mobile {
+            height: 20rem; 
+        }
+    }
+}
+
+// Choose & Enjoy ///////////////////////////////////////
+.span-text {
+    @include span-text; 
+    background-color: var(--span-background);
+    padding: 0.5rem 1rem;
+}
+
+.choose-heading {
+    margin-top: 2rem;
+}
+
+.choose-paragraph {
+    padding: 0 28rem;
+    @include responsive-tablet {
+        padding: 0 5rem;
+    }
+    @include responsive-mobile {
+        padding: 0 3rem;
+    }
+}
+
+// Order Now ///////////////////////////////////////
+.order {
+    height: auto;
+    position: relative;
+    width: 38rem;
+    height: 30rem;
+    left: 7rem;
+    margin-right: 5rem;
+    @include responsive-laptop {
+        width: 31rem; 
+    }
+    @include responsive-tablet {
+        width: 22rem; 
+        height: 25rem; 
+    }
+    @include responsive-mobile {
+        margin-bottom: 24rem;
+        height: 20rem; 
+    }
+
+    img {
+        @include set-image; 
+        z-index: 9;
+    }
+
+    .shadow:before {
+        content: ''; 
+        position: absolute;
+        bottom: -30px;
+        left: 5%;
+        width: 88%;
+        height: 10px;
+        background: rgba(0,0,0,0.8);
+        border-radius: 50%;
+        z-index: -1;
+        filter: blur(10px);
+    }
+}
+
+.order-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &__heading {
+        margin-top: 5.5rem;
+    }
+
+    &__text {
+        padding: 6px 3rem;
+        @include responsive-tablet {
+            padding: 6px 0;
+        }
+    }
+
+    &__button {
+        font-size: 1.3rem; 
+        font-weight: 700;
+        padding: 1rem 3rem;
+        margin-top: 1.2rem;
+        @include button-common; 
+    }  
+}
+
+// Upcoming Events ///////////////////////////////////////
+.card {
+    display: flex;
+    width: 82%;
+    height: 40rem;
+    padding: 2rem;
+    box-shadow: var(--color-boxshadow); 
+    @include responsive-mobile {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr); 
+        height: 62rem;
+        padding: 1rem;
+    }
+}
+
+.card-content {
+    width: 50%;
+    padding: 2.5rem 0 0 3rem;
+    @include responsive-mobile {
+        width: 100%; 
+        padding: 2rem 0.5rem 0 1rem;
+    }
+
+    span {
+        @include span-text; 
+        color: var(--color-text2);
+    }
+
+    h3 {
+        margin-bottom: 1rem;
+        margin-top: -0.5rem;
+        @include responsive-mobile {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        padding-right: 20rem; 
+        @include responsive-laptop {
+            padding-right: 8rem;
+        }
+        @include responsive-tablet {
+            padding-right: 0.5rem;
+        }
+        @include responsive-mobile {
+            padding: 0;
+        }
+    }
+} 
+
+.card-image {
+    width: 50%;
+    img {
+        @include set-image; 
+    }
+    @include responsive-mobile {
+        width: 100%;
+    }
+}
+
+.three-dot {
+    margin-top: 13rem;
+    .dot {
+        height: 16px;
+        width: 16px;
+        background-color: var(--color-dot1);
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        &:first-child {
+            background-color: var(--color-dot2); 
+        }
+    }
+    @include responsive-mobile {
+        margin-top: 4rem;
+    }
+}
+
+// Reservation ///////////////////////////////////
+.book-table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        @include span-text; 
+    }
+
+    form {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 2rem;
+        margin-top: 4rem;
+        @include responsive-mobile {
+            grid-template-columns: 1fr; 
+            margin-top: 3rem;
+        }
+
+        input {
+            width: 30rem;
+            padding: 12px 14px;
+            box-sizing: border-box;
+            font-weight: 600;
+            color: var(--color-text2);
+            border: 2px solid var(--color-border);
+            border-radius: 0.4rem;
+            outline: none;
+            @include responsive-mobile {
+                width: 27rem; 
+            }
+        }
+
+        button {
+            @include button-common;
+            font-size: 1.3rem; 
+            font-weight: 900;
+            border-radius: 0.4rem; 
+            @include responsive-mobile {
+                height: 3.8rem;
+            }
+        }
+    }
+}
+
+.bg-images {
+    img {
+        position: absolute;
+        z-index: 9;
+    }
+    .book-image1 {
+        width: 27rem;
+        top: 3.5rem;
+        left: -3rem;
+        @include responsive-tablet {
+            width: 20rem;
+        }
+        @include responsive-mobile {
+            width: 15rem;
+            z-index: -1;
+            left: -2rem;
+        }
+    }
+    .book-image2 {
+        width: 4rem;
+        top: 21rem;
+        left: 26rem;
+        @include responsive-laptop {
+            left: 19rem;
+        }
+        @include responsive-tablet {
+            left: 8rem;
+        }
+        @include responsive-mobile {
+            z-index: -1;
+            left: 15rem;
+            top: 21rem;
+            width: 5rem;
+        }
+    }
+}
+
+// Footer  //////////////////////////////////////
+.footer {
+    height: 43rem;
+    width: 90%; 
+    background: url(../assets/footer-bg-5.jpg), linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8), rgba(0,0,0,0.9));
+    background-blend-mode: overlay;
+    background-repeat: no-repeat; 
+    background-size:cover;
+    @include responsive-mobile {
+        height: 42rem;
+    }
+}
+
+.footer-logo {
+    color: var(--color-background1);
+    position: absolute;
+    top: 6rem; 
+    left: 11rem;
+    width: 40%;
+    @include responsive-mobile {
+        left: 5rem;
+        width: 100%;
+        top: 4rem;
+    }
+    &__logo {
+        i {
+            font-size: 6rem;
+            @include responsive-mobile {
+                font-size: 4rem; 
+            }
+            span {
+                @include footer-span; 
+                font-size: 3.5rem;
+                margin-left: 2rem;
+                position: absolute;
+                top: 2rem;
+                @include responsive-mobile {
+                    font-size: 2.5rem;
+                    top: 1rem;
+                    margin-left: 1.6rem;
+                }
+            }
+        }
+    }
+
+    p {
+        margin-top: 2rem;
+        padding-right: 15rem;
+        color: var(--light-white); 
+        @include responsive-tablet {
+            padding-right: 1rem;
+        }
+        @include responsive-mobile {
+            padding-right: 9rem;
+        }
+    }
+}
+
+.footer-contact {
+    color: var(--color-background1);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 17rem; 
+    right: 8rem;
+    width: 25%;
+    @include responsive-laptop {
+        width: 28%;
+    }
+    @include responsive-tablet {
+        width: 34%;
+        right: 6rem;
+        top: 19rem;
+    }
+    @include responsive-mobile {
+        left: 5rem;
+        top: 26rem;
+        width: 100%;
+    }
+    i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        @include responsive-mobile {
+            font-size: 1.8rem; 
+        }
+        span {
+            @include footer-span; 
+            font-size: 1.3rem;
+            margin-left: 2rem;
+            @include responsive-mobile {
+                font-size: 1.1rem;
+                margin-left: 1.5rem;
+            }
+        }
+        .address {
+            position: absolute;
+            bottom: 4.2rem;
+        }
+        .email {
+            position: absolute;
+            bottom: 1.2rem;
+            cursor: pointer;
+        }
+    }
+}
+
+.copyright {
+    position: absolute;
+    bottom: 6rem;
+    left: 11rem;
+    width: 30%;
+    color: var(--light-white);
+    @include responsive-tablet {
+        width: 40%; 
+    }
+    @include responsive-mobile {
+        left: 4rem;
+        bottom: 20.5rem; 
+        width: 90%; 
+    }
+    span {
+        @include footer-span; 
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}
+
+.footer-icons {
+    position: absolute;
+    bottom: 6rem;
+    right: 10rem;
+    color: var(--light-white);
+    @include responsive-mobile {
+        bottom: 26rem;
+        left: 5rem;
+    }
+    i {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--color-background1);
+        color: var(--color-black); 
+        margin-right: 0.5rem;
+        cursor: pointer;
+    }
+}
